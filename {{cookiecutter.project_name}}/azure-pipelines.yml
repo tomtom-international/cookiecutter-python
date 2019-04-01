@@ -1,0 +1,19 @@
+# Azure pipeline to build, test and deploy the {{ cookiecutter.project_slug }} package.
+
+trigger:
+- master
+
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: tomtom-international/azure-pipeline-templates
+      ref: refs/heads/master
+      # For github projects we need to define a service connection
+      # See https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema#repository-resource
+      endpoint: tomtom-international
+
+jobs:
+  - template: jobs/python.setup.py.yml@templates
+    parameters:
+      pypiConnector: "testpypi-tomtom-dev"

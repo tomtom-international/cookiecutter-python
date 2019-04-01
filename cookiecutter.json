@@ -1,0 +1,12 @@
+{
+    "full_name": "John Doe",
+    "email": "john.doe@example.com",
+    "github_username": "tomtom-international",
+    "project_name": "python-skeleton",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_short_description": "Describe in a short sentence your Python package.",
+    "version": "0.0.1-dev",
+    "azure_org_name": "tomtomweb",
+    "azure_project_name": "GitHub-TomTom-International",
+    "azure_build_definition_id": "5"
+}
