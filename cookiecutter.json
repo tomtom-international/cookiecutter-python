@@ -1,12 +1,22 @@
 {
     "full_name": "John Doe",
     "email": "john.doe@example.com",
-    "github_username": "tomtom-international",
+
+    "vs": ["github", "bitbucket"],
+    "vs_url": "{% if cookiecutter.vs|lower == 'github' %}github.com{% else %}bitbucket.your_org.com{% endif %}",
+    "vs_account": "{% if cookiecutter.vs|lower == 'github' %}tomtom-international{% else %}NAV{% endif %}",
+
     "project_name": "python-skeleton",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_short_description": "Describe in a short sentence your Python package.",
     "version": "0.0.1-dev",
-    "azure_org_name": "tomtomweb",
-    "azure_project_name": "GitHub-TomTom-International",
-    "azure_build_definition_id": "5"
+
+    "ci": ["{% if cookiecutter.vs|lower == 'github' %}azure{% else %}jenkins{% endif %}", "{% if cookiecutter.vs|lower == 'github' %}jenkins{% else %}azure{% endif %}"],
+    "ci_url": "{% if cookiecutter.ci|lower == 'azure' %}https://dev.azure.com{% else %}https://jenkins.your_org.com{% endif %}",
+    "ci_org_name": "{% if cookiecutter.ci|lower == 'azure' %}tomtomweb{% else %}Public{% endif %}",
+    "ci_project_name": "{% if cookiecutter.ci|lower == 'azure' %}GitHub-TomTom-International{% else %}{{ cookiecutter.vs_account }}{% endif %}",
+    "pypi_repo": "{% if cookiecutter.ci|lower == 'azure' %}https://pypi.org/legacy/{% else %}https://artifactory.your_org.com/artifactory/api/pypi/pypi-local{% endif %}",
+    "pypi_credentials_id": "{% if cookiecutter.ci|lower == 'azure' %}testpypi-tomtom-dev{% else %}artifactory-pypi{% endif %}",
+    "ci_ssh_agent_user": "{% if cookiecutter.ci|lower == 'jenkins' %}ssh_svc_ci{% else %}N/A{% endif %}",
+    "azure_build_definition_id": "{% if cookiecutter.ci|lower == 'azure' %}5{% else %}N/A{% endif %}"
 }

@@ -55,7 +55,11 @@ setup(
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,
-    url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_name }}",
+    {% if cookiecutter.vs|lower == "github" -%}
+    url="https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}",
+    {% elif cookiecutter.vs|lower == "bitbucket" -%}
+    url="https://{{ cookiecutter.vs_url }}/projects/{{ cookiecutter.vs_account }}/repos/{{ cookiecutter.project_name }}",
+    {% endif -%}
     version={{ cookiecutter.project_slug }}.__version__,
     zip_safe=False,
 )
