@@ -1,14 +1,15 @@
-Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+{% set title = cookiecutter.project_name ~ ' documentation' -%}
+{{ title }}
+{% for _ in title %}={% endfor %}
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   readme
+   Readme <readme>
    installation
    usage
-   modules
+   Modules <modules>
    contributing
    authors
    history

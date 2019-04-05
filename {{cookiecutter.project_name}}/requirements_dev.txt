@@ -1,20 +1,22 @@
 pip==19.0.3
-virtualenv==16.4.3
 setuptools==40.8.0
+virtualenv==16.4.3
 
 bumpversion==0.5.3
-cmarkgfm==0.4.2
 twine==1.13.0
+
+cmarkgfm==0.4.2
+m2r==0.2.1
+recommonmark==0.5.0
 Sphinx==2.0.0
 sphinx-rtd-theme==0.4.3
-recommonmark==0.5.0
-pylint==2.3.1
-setuptools-lint==0.6.0
-coverage==4.5.3
-tox==3.8.4
 watchdog==0.9.0
 
+coverage==4.5.3
+pylint==2.3.1
 pytest==4.4.0
-pytest-runner==4.4
-pytest-pylint==0.14.0
 pytest-cov==2.6.1
+pytest-pylint==0.14.0
+pytest-runner==4.4
+setuptools-lint==0.6.0
+tox==3.8.4

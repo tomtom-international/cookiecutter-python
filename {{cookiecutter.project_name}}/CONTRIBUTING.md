@@ -71,14 +71,14 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
 
         $ git checkout -b name-of-your-bugfix-or-feature
 
-    Now you can make your changes locally.
+  Now you can make your changes locally.
 
 5. When you're done making changes, check that your changes pass pylint
    and the tests, including testing other Python versions with tox:
 
         $ tox
 
-    To get tox, just pip install it into your virtualenv.
+  To get tox, just pip install it into your virtualenv.
 
 6. Commit your changes and push your branch to {{ cookiecutter.vs | title }}:
 
@@ -101,7 +101,7 @@ Before you submit a pull request, check that it meets these guidelines:
 
 To run a subset of tests:
 
-> $ py.test tests/test_{{ cookiecutter.project_slug }}.py
+    $ py.test tests/test_{{ cookiecutter.project_slug }}.py
 
 ## Deploying
 

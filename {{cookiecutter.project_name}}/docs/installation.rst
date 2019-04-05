@@ -40,6 +40,7 @@ Or download the `tarball`_:
 .. code-block:: console
 
     $ curl  -OL https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_slug }}/tarball/master
+
 {% endif -%}
 
 Once you have a copy of the source, you can install it with:
