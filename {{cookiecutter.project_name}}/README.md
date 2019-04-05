@@ -15,7 +15,7 @@
 {% endif -%}
 {% if cookiecutter.vs|lower == "bitbucket" -%}
 [Bitbucket Pages](https://{{ cookiecutter.vs_url }}/pages/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}/docs/browse/docs/index.html)
-{% endif -%}
+{% endif %}
 
 {{ cookiecutter.project_short_description }}
 
