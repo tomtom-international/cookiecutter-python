@@ -1,9 +1,9 @@
 # {{ cookiecutter.project_name }}
 
 {% if cookiecutter.ci|lower == "azure" -%}
-[![Azure DevOps builds](https://img.shields.io/azure-devops/build/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/{{cookiecutter.azure_build_definition_id }}.svg)](https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build/latest?definitionId={{cookiecutter.azure_build_definition_id }}&branchName=master)
-[![Azure DevOps tests](https://img.shields.io/azure-devops/tests/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/{{cookiecutter.azure_build_definition_id }}.svg)](https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build/latest?definitionId={{cookiecutter.azure_build_definition_id }}&branchName=master)
-[![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/{{cookiecutter.azure_build_definition_id }}.svg)](https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build/latest?definitionId={{cookiecutter.azure_build_definition_id }}&branchName=master)
+[![Azure DevOps builds](https://img.shields.io/azure-devops/build/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/{{cookiecutter.azure_build_definition_id }}/master.svg)](https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build/latest?definitionId={{cookiecutter.azure_build_definition_id }}&branchName=master)
+[![Azure DevOps tests](https://img.shields.io/azure-devops/tests/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/{{cookiecutter.azure_build_definition_id }}/master.svg)](https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build/latest?definitionId={{cookiecutter.azure_build_definition_id }}&branchName=master)
+[![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/{{cookiecutter.azure_build_definition_id }}/master.svg)](https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build/latest?definitionId={{cookiecutter.azure_build_definition_id }}&branchName=master)
 {% endif %}
 {% if cookiecutter.vs|lower == "github" -%}
 [![PyPI - Version](https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.project_name }}/)
