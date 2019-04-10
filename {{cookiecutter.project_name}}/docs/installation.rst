@@ -32,14 +32,14 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git@{{ cookiecutter.vs_url }}:{% if cookiecutter.vs|lower == "bitbucket" %}7999/~{% endif %}your_name_here/{{ cookiecutter.project_name }}.git
+    $ git clone git@{{ cookiecutter.vs_url }}:{% if cookiecutter.vs|lower == "bitbucket" %}7999/~{% endif %}{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}.git
 
 {% if cookiecutter.vs|lower == "github" -%}
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_slug }}/tarball/master
+    $ curl  -OL https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}/tarball/master
 
 {% endif -%}
 
@@ -51,8 +51,8 @@ Once you have a copy of the source, you can install it with:
 
 
 {% if cookiecutter.vs|lower == "github" -%}
-.. _{{ cookiecutter.vs|title }} repo: https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_slug }}
-.. _tarball: https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_slug }}/tarball/master
+.. _{{ cookiecutter.vs|title }} repo: https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}
+.. _tarball: https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}/tarball/master
 {% elif cookiecutter.vs|lower == "bitbucket" -%}
-.. _{{ cookiecutter.vs|title }} repo: https://{{ cookiecutter.vs_url }}/projects/{{ cookiecutter.vs_account }}/repos/{{ cookiecutter.project_slug }}
+.. _{{ cookiecutter.vs|title }} repo: https://{{ cookiecutter.vs_url }}/projects/{{ cookiecutter.vs_account }}/repos/{{ cookiecutter.project_name }}
 {% endif -%}
