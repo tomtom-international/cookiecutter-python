@@ -50,7 +50,7 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords="{{ cookiecutter.project_slug }}",
-    name={{ cookiecutter.project_slug }}.__project__,
+    name="{{ cookiecutter.project_slug }}",
     packages=find_packages(),
     setup_requires=setup_requirements,
     test_suite="tests",
