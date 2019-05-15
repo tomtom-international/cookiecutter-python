@@ -17,8 +17,5 @@ RUN python setup.py sdist \
 FROM $PYTHON_BASE
 COPY --from=deploy_builder /opt/venv /opt/venv
 
-LABEL io.whalebrew.name "ebr-connector-qb"
-LABEL io.whalebrew.config.working_dir "$PWD"
-
 ENV PATH="/opt/venv/bin:$PATH"
-ENTRYPOINT ["ebr-store-qb-results"]
+ENTRYPOINT []
