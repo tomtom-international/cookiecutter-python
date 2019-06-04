@@ -1,0 +1,8 @@
+.editorconfig
+.gitignore
+.pylintrc
+{% if cookiecutter.ci|lower == "azure" -%}
+azure-pipelines.yml
+{% elif cookiecutter.ci|lower == "jenkins" -%}
+Jenkinsfile
+{% endif -%}
