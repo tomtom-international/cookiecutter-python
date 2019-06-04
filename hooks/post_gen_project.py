@@ -17,7 +17,6 @@ if __name__ == '__main__':
 
     if "{{ cookiecutter.ci }}".lower() == "azure":
         remove_file("Jenkinsfile")
-        remove_file("Dockerfile.build")
 
     if "{{ cookiecutter.ci }}".lower() == "jenkins":
         remove_file("azure-pipelines.yml")

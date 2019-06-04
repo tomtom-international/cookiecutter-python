@@ -1,4 +1,0 @@
-FROM tomtom-docker-registry.bintray.io/python/python3-pkg-builder:0.0.22
-
-COPY requirements_dev.txt /
-RUN pip install -r /requirements_dev.txt

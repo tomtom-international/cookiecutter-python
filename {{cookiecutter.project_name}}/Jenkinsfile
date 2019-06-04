@@ -1,8 +1,9 @@
-@Library(['github.com/tomtom-international/jsl']) _
+@Library(value="github.com/tomtom-international/jsl@master", changelog=false) _
 
 pythonSetupPyPipeline \
-  dockerFilename: "Dockerfile.build", \
-  dockerBuildArgs: "--network host", \
+  dockerDeploy: true, \
+  dockerRegistryCredentialsId: "{{ cookiecutter.docker_registry_credentials_id }}", \
+  dockerRegistryUrl: "https://docker.navkit-pipeline.tt3.com", \
   pypiRepo: "{{ cookiecutter.pypi_repo }}", \
-  pypiCredentials: "{{ cookiecutter.pypi_credentials_id }} ", \
+  pypiCredentialsId: "{{ cookiecutter.pypi_credentials_id }} ", \
   sshAgentUser: "{{ cookiecutter.ci_ssh_agent_user }}"
