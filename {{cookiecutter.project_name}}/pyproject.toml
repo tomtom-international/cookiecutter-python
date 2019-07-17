@@ -1,0 +1,17 @@
+{% if cookiecutter.use_black_formatter|lower == "y" -%}
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+{% endif %}
