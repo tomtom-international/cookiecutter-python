@@ -133,7 +133,8 @@ disable=print-statement,
         xreadlines-attribute,
         deprecated-sys-function,
         exception-escape,
-        comprehension-escape
+        comprehension-escape,{% if cookiecutter.use_black_formatter|lower == "y" %}
+        bad-continuation, # Disable for use with black{% endif %}
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

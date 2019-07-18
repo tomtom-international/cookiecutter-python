@@ -1,8 +1,10 @@
 {
     "full_name": "John Doe",
     "email": "john.doe@example.com",
-
-    "vs": ["github", "bitbucket"],
+    "vs": [
+        "github",
+        "bitbucket"
+    ],
     "vs_url": "{% if cookiecutter.vs|lower == 'github' %}github.com{% else %}bitbucket.your_org.com{% endif %}",
     "vs_account": "{% if cookiecutter.vs|lower == 'github' %}tomtom-international{% else %}NAV{% endif %}",
 
@@ -10,6 +12,8 @@
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_short_description": "Describe in a short sentence your Python package.",
     "version": "0.0.1-dev",
+
+    "use_black_formatter": "n",
 
     "ci": "{% if cookiecutter.vs|lower == 'github' %}azure{% else %}jenkins{% endif %}",
     "ci_url": "{% if cookiecutter.ci|lower == 'azure' %}https://dev.azure.com{% else %}https://jenkins.your_org.com{% endif %}",
