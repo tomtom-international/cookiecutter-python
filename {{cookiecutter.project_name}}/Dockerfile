@@ -16,8 +16,8 @@ RUN pip install --upgrade virtualenv==16.6.0 && python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 COPY . /code
 WORKDIR /code
-RUN python setup.py sdist \
-  && pip install dist/*
+RUN DIST_DIR=$(mktemp -d) && python setup.py sdist --dist-dir $DIST_DIR\
+  && pip install $DIST_DIR/*.tar.gz
 
 
 FROM $PYTHON_BASE
