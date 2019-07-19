@@ -24,3 +24,6 @@ tox==3.12.1
 {% if cookiecutter.use_black_formatter|lower == "y" -%}
 pytest-black==0.3.7
 {% endif %}
+{% if cookiecutter.use_bandit_sec_scan|lower == "y" -%}
+pytest-bandit==0.5.1
+{% endif %}
