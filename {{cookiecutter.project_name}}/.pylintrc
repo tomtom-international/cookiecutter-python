@@ -195,10 +195,10 @@ max-spelling-suggestions=4
 
 # Spelling dictionary name. Available dictionaries: none. To make it working
 # install python-enchant package.
-spelling-dict=
+spelling-dict={% if cookiecutter.use_spellcheck|lower == "y" -%}en_US{% endif %}
 
 # List of comma separated words that should not be checked.
-spelling-ignore-words=
+spelling-ignore-words={% if cookiecutter.use_spellcheck|lower == "y" -%}args, bool, yaml, str, config, py, dicts, api{% endif %}
 
 # A path to a file that contains private dictionary; one word per line.
 spelling-private-dict-file=
