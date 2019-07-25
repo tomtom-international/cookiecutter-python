@@ -198,7 +198,10 @@ max-spelling-suggestions=4
 spelling-dict={% if cookiecutter.use_spellcheck|lower == "y" -%}en_US{% endif %}
 
 # List of comma separated words that should not be checked.
-spelling-ignore-words={% if cookiecutter.use_spellcheck|lower == "y" -%}args, bool, yaml, str, config, py, dicts, api{% endif %}
+spelling-ignore-words={% if cookiecutter.use_spellcheck|lower == "y" -%}
+    authorised, api, args, bool, calver, cd, config, dicts,
+    metadata, py, regexp, semver, str, timestamp, tz, utc, yaml
+{% endif %}
 
 # A path to a file that contains private dictionary; one word per line.
 spelling-private-dict-file=
