@@ -95,7 +95,7 @@ Before you submit a pull request, check that it meets these guidelines:
 1. The pull request should include tests.
 2. If the pull request adds functionality, the docs should be updated.
    Put your new functionality into a function with a docstring, and add the feature to the list in README.md.
-3. The pull request should work for Python 3.5, 3.6 and 3.7, and for PyPy. Check {% if cookiecutter.ci|lower == "azure" -%}https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build{% elif cookiecutter.ci|lower == "jenkins" -%}{{ cookiecutter.ci_url }}/{% if cookiecutter.ci_org_name|length -%}job/{{ cookiecutter.ci_org_name }}/{% endif %}job/{{ cookiecutter.ci_project_name }}/job/{{ cookiecutter.project_name }}/view/change-requests/{% endif %} and make sure that the tests pass for all supported Python versions.
+3. The pull request should work for Python 3.5, 3.6 and 3.7, and for PyPi. Check {% if cookiecutter.ci|lower == "azure" -%}https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build{% elif cookiecutter.ci|lower == "jenkins" -%}{{ cookiecutter.ci_url }}/{% if cookiecutter.ci_org_name|length -%}job/{{ cookiecutter.ci_org_name }}/{% endif %}job/{{ cookiecutter.ci_project_name }}/job/{{ cookiecutter.project_name }}/view/change-requests/{% endif %} and make sure that the tests pass for all supported Python versions.
 
 
 
