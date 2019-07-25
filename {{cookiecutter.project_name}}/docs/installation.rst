@@ -32,7 +32,7 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git@{{ cookiecutter.vs_url }}:{% if cookiecutter.vs|lower == "bitbucket" %}7999/~{% endif %}{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}.git
+    $ git clone ssh://git@{{ cookiecutter.vs_url }}{% if cookiecutter.vs|lower == "bitbucket" %}:7999{% endif %}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}.git
 
 {% if cookiecutter.vs|lower == "github" -%}
 Or download the `tarball`_:

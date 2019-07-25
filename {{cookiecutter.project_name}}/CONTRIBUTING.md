@@ -57,7 +57,7 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
 
 2. Clone your fork locally:
 
-        $ git clone git@{{ cookiecutter.vs_url }}:{% if cookiecutter.vs|lower == "bitbucket" %}7999/~{% endif %}your_name_here/{{ cookiecutter.project_name }}.git
+        $ git clone ssh://git@{{ cookiecutter.vs_url }}{% if cookiecutter.vs|lower == "bitbucket" %}:7999/~{% else %}/{% endif %}your_name_here/{{ cookiecutter.project_name }}.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenv installed,
    this is how you set up your fork for local development:
