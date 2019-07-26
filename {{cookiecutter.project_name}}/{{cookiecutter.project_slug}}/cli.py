@@ -6,7 +6,7 @@ import argparse
 
 
 def parse_args(args):
-    """Returns parsed commandline arguments.
+    """Returns parsed command line arguments.
     """
 
     parser = argparse.ArgumentParser(description="Commandline interface for {{ cookiecutter.project_slug }}")
@@ -21,4 +21,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+    sys.exit(main())

@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""The setup script."""
-
-from __future__ import with_statement
+"""A setuptools based setup module.
+See:
+https://packaging.python.org/en/latest/distributing.html
+https://github.com/pypa/sampleproject
+"""
 
 try:
     from setuptools import setup, find_packages
@@ -19,15 +21,39 @@ with open("README.md") as readme_file:
 with open("CHANGELOG.md") as changelog_file:
     changelog = changelog_file.read()
 
+
 requirements = []
-
+# pytest-runner is needed to be able to call `python setup.py test` and use pytest to
+# execute the tests
 setup_requirements = ["pytest-runner",]
-
 test_requirements = ["pytest", "pytest-cov", "coverage",]
 
+
 setup(
+    name="{{ cookiecutter.project_slug }}",
+
+    # Versions should comply with PEP440.
+    version={{ cookiecutter.project_slug }}.__version__,
+
+    description="{{ cookiecutter.project_short_description }}",
+    long_description=readme + "\n\n" + changelog,
+    long_description_content_type="text/markdown",
+
+    # The project's main homepage.
+    {% if cookiecutter.vs|lower == "github" -%}
+    url="https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}",
+    {% elif cookiecutter.vs|lower == "bitbucket" -%}
+    url="https://{{ cookiecutter.vs_url }}/projects/{{ cookiecutter.vs_account }}/repos/{{ cookiecutter.project_name }}",
+    {% endif -%}
+
+     # Author details
     author={{ cookiecutter.project_slug }}.__author__,
     author_email={{ cookiecutter.project_slug }}.__email__,
+
+    # Choose your license
+    license="Apache Software License 2.0",
+
+    # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
@@ -38,28 +64,45 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
-    description="{{ cookiecutter.project_short_description }}",
+
+    # What does your project relate to?
+    keywords="{{ cookiecutter.project_slug }}",
+
+    # You can just specify the packages manually here if your project is
+    # simple. Or you can use find_packages().
+    packages=find_packages(),
+
+    # If there are data files included in your packages that need to be
+    # installed, specify them here.
+    package_data={},
+
+    # If set to True, this tells setuptools to automatically include any data
+    # files it finds inside your package directories that are specified by your MANIFEST.in file.
+    # See as well https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files.
+    include_package_data=True,
+
+    # To provide executable scripts, use entry points in preference to the
+    # "scripts" keyword. Entry points provide cross-platform support and allow
+    # pip to create the appropriate form of executable for the target platform.
     entry_points={
         "console_scripts": [
             "{{ cookiecutter.project_name }}={{ cookiecutter.project_slug }}.cli:main",
         ],
     },
+
+    # List run-time dependencies here.  These will be installed by pip when
+    # your project is installed. For an analysis of "install_requires" vs pip's
+    # requirements files see:
+    # https://packaging.python.org/en/latest/requirements.html
+    # Please pin to specific versions.
     install_requires=requirements,
-    license="Apache Software License 2.0",
-    long_description=readme + "\n\n" + changelog,
-    long_description_content_type="text/markdown",
-    include_package_data=True,
-    keywords="{{ cookiecutter.project_slug }}",
-    name="{{ cookiecutter.project_slug }}",
-    packages=find_packages(),
+
+    # List of dependencies required before running the setup script.
     setup_requires=setup_requirements,
-    test_suite="tests",
+
+    # List of dependencies required during test execution.
     tests_require=test_requirements,
-    {% if cookiecutter.vs|lower == "github" -%}
-    url="https://{{ cookiecutter.vs_url }}/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}",
-    {% elif cookiecutter.vs|lower == "bitbucket" -%}
-    url="https://{{ cookiecutter.vs_url }}/projects/{{ cookiecutter.vs_account }}/repos/{{ cookiecutter.project_name }}",
-    {% endif -%}
-    version={{ cookiecutter.project_slug }}.__version__,
-    zip_safe=False,
+
+    # Name a package or module containing one or more tests
+    test_suite="tests"
 )

@@ -1,3 +1,7 @@
+# In case you need to pull a dependency from a custom PyPi index add a new line `--extra-index-url`.
+# Example:
+# --extra-index-url https://artifactory.acme.org/artifactory/api/pypi/pypi-local/simple
+
 pip==19.1.1
 setuptools==41.0.1
 virtualenv==16.6.0
