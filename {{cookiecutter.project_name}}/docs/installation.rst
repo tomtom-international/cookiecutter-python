@@ -12,7 +12,7 @@ To install {{ cookiecutter.project_name }}, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install {{ cookiecutter.project_name }}
+    $ pip install{% if "artifactory" in cookiecutter.pypi_repo %} -i {{ cookiecutter.pypi_repo }}{% endif %} {{ cookiecutter.project_name }}
 
 This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release.
 
