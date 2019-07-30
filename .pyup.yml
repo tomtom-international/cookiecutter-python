@@ -1,0 +1,27 @@
+# configure updates globally
+# default: all
+# allowed: all, insecure, False
+update: all
+
+# update schedule
+# default: empty
+# allowed: "every day", "every week", ..
+schedule: "every day"
+
+# search for requirement files
+# default: True
+# allowed: True, False
+search: True
+
+# Specify requirement files by hand, default is empty
+# default: empty
+# allowed: list
+requirements:
+  - {{cookiecutter.project_name}}/requirements_dev.txt:
+    # update all dependencies and pin them
+    update: all
+    pin: True
+
+# set a global prefix for PRs
+# default: empty
+pr_prefix: "chore: "
