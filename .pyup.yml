@@ -17,7 +17,7 @@ search: True
 # default: empty
 # allowed: list
 requirements:
-  - {{cookiecutter.project_name}}/requirements_dev.txt:
+  - "{{cookiecutter.project_name}}/requirements_dev.txt":
     # update all dependencies and pin them
     update: all
     pin: True
