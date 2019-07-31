@@ -4,7 +4,6 @@
 
 pip==19.2.1
 setuptools==41.0.1
-virtualenv==16.6.0
 
 bumpversion==0.5.3
 twine==1.13.0
