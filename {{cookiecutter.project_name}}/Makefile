@@ -24,15 +24,33 @@ for line in sys.stdin:
 endef
 export PRINT_HELP_PYSCRIPT
 
-BROWSER := python -c "$$BROWSER_PYSCRIPT"
+# Mandatory tools
+PIP := $(shell command -v pip3 2> /dev/null)
+PYTHON := $(shell command -v python3 2> /dev/null)
+
+# Virtualenv config and wrappers
+PYTHONVERSION := python3
+PYTHONENV := env
+ENVPYTHON := $(PYTHONENV)/bin/python
+ENVPIP := $(PYTHONENV)/bin/pip
+
+BROWSER := $(ENVPYTHON) -c "$$BROWSER_PYSCRIPT"
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-setup: ## install dev requirements
-	pip install virtualenv
-	virtualenv env
-	./env/bin/pip install -r requirements_dev.txt
+setup-checks:
+ifndef PIP
+$(error Missing pip. Installation guide can be found here https://pip.pypa.io/en/stable/installing/)
+endif
+ifndef PYTHON
+$(error Missing python. Installation guide can be found here https://www.python.org/downloads/)
+endif
+
+setup: setup-checks ## install dev requirements
+	$(PIP) install virtualenv
+	virtualenv --python=$(PYTHONVERSION) $(PYTHONENV)
+	$(ENVPIP) install -r requirements_dev.txt
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
@@ -57,10 +75,10 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	python setup.py lint
+	$(ENVPYTHON) setup.py lint
 
 test: ## run tests quickly with the default Python
-	python setup.py test
+	$(ENVPYTHON) setup.py test
 
 test-all: ## run tests on every Python version with tox
 	tox
@@ -86,9 +104,9 @@ release: dist ## package and upload a release
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
+	$(ENVPYTHON) setup.py sdist
+	$(ENVPYTHON) setup.py bdist_wheel
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages
-	python setup.py install
+	$(ENVPYTHON) setup.py install
