@@ -15,7 +15,17 @@
 * Bumpversion: Pre-configured version bumping with a single command
 * Auto-release to PyPI when PR gets merged into master via Azure Pipelines or Jenkins Pipelines.
 
-## Quickstart
+## Getting Started
+
+### Prerequisites
+
+Install the following minimum requirements
+
+* [python3](https://www.python.org/downloads)
+* [pip3](https://pip.pypa.io/en/stable/installing)
+* [virtualenv >= 16.6.0](https://virtualenv.pypa.io/en/latest/installation/)
+
+### Installing
 
 Install the latest Cookiecutter if you haven't installed it yet (this requires Cookiecutter 1.4.0 or higher):
 
@@ -32,11 +42,41 @@ cookiecutter gh:tomtom-international/cookiecutter-python
 Then:
 
 * Create a repo and push the generated project to master.
-* Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``) and start coding.
-* If you chose to use Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
-* If you chose to use Jenkins it depends on your internal Jenkins setup.
-  * For internal TomTom projects: Trigger **Scan Organization Folder Now** on the BitBucket Team Project folder. In case of problems contact the @nav-pipeline team.
-* Contact the @nav-pipeline team to activate your project on `pyup.io`.
+* Install the dev requirements into a virtualenv. (`pip install -r requirements_dev.txt`) and start coding.
+
+
+#### Variables explained
+
+Cookiecutter will prompt you for various settings which we are explained here:
+
+* `full_name` -  The authors name (default: John Doe)
+* `email` - The authors email (default: john.doe@example.com)
+* `vs` - Select between github (1) or bitbucket (2) (default: 1)
+* `vs_url` - Provide the domain name of the versioning system without `http(s)://` (default: github.com)
+* `vs_account` - Account/organization on Github or project name on BitBucket Server (default: tomtom-international)
+* `project_name` - The name of your Python project (default: python-skeleton)
+* `project_slug` -  Python friendly module name. By default this is the normalized version of `project_name` (default: python_skeleton)
+* `project_short_description` -  A short description of your Python package. This will end up in the README.md of your project
+* `version` - The current in-development version. The project makes use of [SemVer](https://semver.org) (default: 0.0.1-dev)
+* `use_black_formatter` - Use [black](https://github.com/psf/black) for formatting your code (default: n)
+* `use_spellcheck`- Use [spellchecking](https://github.com/rfk/pyenchant) in your project (default: y)
+* `ci` - Select the CI system you want to use. By default the CI system is chosen based on the selected versioning system (`vs`). If you chose Github as VS the default CI system will be Azure Pipelines.  In case of Bitbucket you will get Jenkins.
+* `ci_url` - URL to your CI system (eg. https://dev.azure.com, https://jenkins.acme.org)
+* `ci_org_name` - For Azure Pipelines this is the organization name. In case of Jenkins you can leave this either empty or in case you have defined your Jenkins projects under a folder use the folder name.
+* `ci_project_name` - For Azure Pipelines this is the name of your project. In case of Jenkins this is by default `vs_account` which usually is a `BitBucket Team Project`
+* `pypi_repo` - PyPI repository the package should be deployed to. In case you select Github for `vs` the default value is the official PyPI index whereas in case of BitBucket you get a hint to provide a URL to an Artifactory PyPI repository.
+* `pypi_credentials_id` - For Azure Pipelines this is the [service connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml) that allows you to push Python packages to the official PyPI index. For Jenkins this is the credentials ID used for authentication with an Artifactory PyPI repository.
+* `docker_registry_credentials_id` - For Azure Pipelines this is the service connection that allows you to push Docker images to a public Docker registry. For Jenkins this is the credentials ID used for authentication with for example an Artifactory Docker repository.
+* `ci_ssh_agent_user` -  Skip this for Azure Pipelines. For Jenkins this is the credentials ID for a user authenticated with a SSH private key. This is required to allow git commits during the versioning process.
+* `azure_build_definition_id` - Skip this for Jenkins. For Azure Pipelines this is the ID identifiying the pipeline (eg. https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build?definitionId=26)
+
+## Tips
+
+In case you want to host a project in the `tomtom-international` organization and you chose Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
+
+Contact as well the @nav-pipeline team to activate your project on `pyup.io` for automated scanning of your Python dependencies.
+
+In case of hosting on Jenkins/Bitbucket Server we recommend using the *BitBucket Branch Source Plugin* that allows you to configure a folder in Jenkins that will scan the whole BitBucket project for repositories with a `Jenkinsfile`.
 
 ## Credits
 
