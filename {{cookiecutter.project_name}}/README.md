@@ -22,7 +22,7 @@
 
 * [python3](https://www.python.org/downloads)
 * [pip3](https://pip.pypa.io/en/stable/installing)
-* virtualenv >= 16.6.0
+* [virtualenv >= 16.6.0](https://virtualenv.pypa.io/en/latest/installation/)
 
 ## Credits
 
