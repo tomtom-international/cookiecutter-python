@@ -96,11 +96,13 @@ Cookiecutter will prompt you for various settings which we are explained here:
 
 ## Tips
 
+### Azure
+
 In case you want to host a project in the `tomtom-international` organization and you chose Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
 
-In case of hosting on Jenkins/Bitbucket Server we recommend using the *BitBucket Branch Source Plugin* that allows you to configure a folder in Jenkins that will scan the whole BitBucket project for repositories with a `Jenkinsfile`.
-
 ### Jenkins
+
+In case of hosting on Jenkins/Bitbucket Server we recommend using the *BitBucket Branch Source Plugin* that allows you to configure a folder in Jenkins that will scan the whole BitBucket project for repositories with a `Jenkinsfile`.
 
 The following Jenkins plugins are required by the `pythonSetupPyPipeline`:
 
