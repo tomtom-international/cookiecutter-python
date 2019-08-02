@@ -59,7 +59,6 @@ Then:
 * If you chose to use Jenkins it depends on your internal Jenkins setup.
   * Required Jenkins plugins: `Warnings Next Generation Plugin >=4.0.0`, `Cobertura Plugin >=1.13`,  `Pipeline: GitHub Groovy Libraries >=1.0`
   * For internal TomTom projects: Trigger **Scan Organization Folder Now** on the BitBucket Team Project folder. In case of problems contact the @nav-pipeline team.
-* Contact the @nav-pipeline team to activate your project on `pyup.io`.
 * Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``) and start coding.
 * If you chose to use Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
 * If you chose to use Jenkins it depends on your internal Jenkins setup.
@@ -98,8 +97,6 @@ Cookiecutter will prompt you for various settings which we are explained here:
 ## Tips
 
 In case you want to host a project in the `tomtom-international` organization and you chose Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
-
-Contact as well the @nav-pipeline team to activate your project on `pyup.io` for automated scanning of your Python dependencies.
 
 In case of hosting on Jenkins/Bitbucket Server we recommend using the *BitBucket Branch Source Plugin* that allows you to configure a folder in Jenkins that will scan the whole BitBucket project for repositories with a `Jenkinsfile`.
 
