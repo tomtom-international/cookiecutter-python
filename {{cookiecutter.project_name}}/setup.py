@@ -30,7 +30,7 @@ test_requirements = ["pytest", "pytest-cov", "coverage",]
 
 
 setup(
-    name="{{ cookiecutter.project_slug }}",
+    name={{ cookiecutter.project_slug }}.__project__,
 
     # Versions should comply with PEP440.
     version={{ cookiecutter.project_slug }}.__version__,
