@@ -63,11 +63,9 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
         $ source env/bin/activate
         $ python setup.py develop
 
-1. Create a branch for local development:
+1. Create a branch for local development and start making your changes locally:
 
         $ git checkout -b name-of-your-bugfix-or-feature
-
-    Now you can make your changes locally.
 
 1. When you're done making changes, check that your changes pass pylint and the tests:
 
@@ -121,5 +119,5 @@ on the **Queue** button and run a build with the following settings:
 
 {% elif cookiecutter.ci|lower == "jenkins" -%}
 Go to the [{{ cookiecutter.project_name }} Jenkins job]({{ cookiecutter.ci_url }}/{% if cookiecutter.ci_org_name|length -%}job/{{ cookiecutter.ci_org_name }}/{% endif %}job/{{ cookiecutter.ci_project_name }}/job/{{ cookiecutter.project_name }}/job/master)
-and click on **Build with parameters**, tick **doRelease** and click the **Build** button.
+and click on **Build with parameters**, tick **doRelease** and click on the **Build** button.
 {% endif -%}
