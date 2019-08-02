@@ -34,3 +34,6 @@ if __name__ == "__main__":
 
     if file_size("pyproject.toml") == 0:
         remove_file("pyproject.toml")
+
+    if "{{ cookiecutter.use_tox }}".lower() == "n":
+        remove_file("tox.ini")

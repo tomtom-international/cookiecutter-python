@@ -69,8 +69,10 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-test: ## remove test and coverage artifacts
+{%- if cookiecutter.use_tox|lower == "y" -%}
 	rm -fr .tox/
-	rm -f .coverage
+{%- endif %}
+	rm -fr .coverage
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
@@ -80,8 +82,10 @@ lint: ## check style with flake8
 test: ## run tests quickly with the default Python
 	$(ENVPYTHON) setup.py test
 
+{% if cookiecutter.use_tox|lower == "y" -%}
 test-all: ## run tests on every Python version with tox
 	tox
+{% endif -%}
 
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source {{ cookiecutter.project_slug }} -m pytest

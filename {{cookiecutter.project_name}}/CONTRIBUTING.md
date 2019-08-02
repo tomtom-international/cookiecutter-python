@@ -53,9 +53,9 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
 
 1. Fork the **{{ cookiecutter.project_name }}** repo on {{ cookiecutter.vs | title }}.
 
-2. Clone your fork locally.
+1. Clone your fork locally.
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenv installed,
+1. Install your local copy into a virtualenv. Assuming you have virtualenv installed,
    this is how you set up your fork for local development:
 
         $ cd {{ cookiecutter.project_name }}/
@@ -63,35 +63,42 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
         $ source env/bin/activate
         $ python setup.py develop
 
-4. Create a branch for local development:
+1. Create a branch for local development:
 
         $ git checkout -b name-of-your-bugfix-or-feature
 
-  Now you can make your changes locally.
+    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass pylint
-   and the tests, including testing other Python versions with tox:
+1. When you're done making changes, check that your changes pass pylint and the tests:
+
+        $ python setup.py lint
+        $ python setup.py test
+
+{% if cookiecutter.use_tox|lower == "y" -%}
+
+    Use tox for running the validations against different Python versions:
 
         $ tox
 
-  To get tox, just pip install it into your virtualenv.
+    To get tox, just pip install it into your virtualenv.
+{% endif -%}
 
-6. Commit your changes and push your branch to {{ cookiecutter.vs | title }}:
+1. Commit your changes and push your branch to {{ cookiecutter.vs | title }}:
 
         $ git add .
         $ git commit -m "Your detailed description of your changes."
-        $ git push origin name-of-your-bugfix-or-feature
+        $ git push origin name-of-your-bugfix-or-feature-branch
 
-7. Submit a pull request through the {{ cookiecutter.vs | title }} website.
+1. Submit a pull request through the {{ cookiecutter.vs | title }} website.
 
 ## Pull Request Guidelines
 
 Before you submit a pull request, check that it meets these guidelines:
 
 1. The pull request should include tests.
-2. If the pull request adds functionality, the docs should be updated.
-   Put your new functionality into a function with a docstring, and add the feature to the list in [README.md](README.md).
-3. The pull request should pass the CI checks. Check {% if cookiecutter.ci|lower == "azure" -%}https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build{% elif cookiecutter.ci|lower == "jenkins" -%}{{ cookiecutter.ci_url }}/{% if cookiecutter.ci_org_name|length -%}job/{{ cookiecutter.ci_org_name }}/{% endif %}job/{{ cookiecutter.ci_project_name }}/job/{{ cookiecutter.project_name }}/view/change-requests/{% endif %} and make sure that the tests pass for all supported Python versions.
+1. If the pull request adds functionality, the docs should be updated.
+   Put your new functionality into a function with a docstring, and add the feature to the list in the [README.md](README.md).
+1. The pull request should pass the CI checks. Check {% if cookiecutter.ci|lower == "azure" -%}https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build{% elif cookiecutter.ci|lower == "jenkins" -%}{{ cookiecutter.ci_url }}/{% if cookiecutter.ci_org_name|length -%}job/{{ cookiecutter.ci_org_name }}/{% endif %}job/{{ cookiecutter.ci_project_name }}/job/{{ cookiecutter.project_name }}/view/change-requests/{% endif %} and make sure that the tests pass for all supported Python versions.
 
 ## Tips
 
