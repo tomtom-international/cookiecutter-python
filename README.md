@@ -55,17 +55,6 @@ Then:
 
 * Create a repo and push the generated project to master.
 * Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``) and start coding.
-* If you chose to use Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
-* If you chose to use Jenkins it depends on your internal Jenkins setup.
-  * Required Jenkins plugins: `Warnings Next Generation Plugin >=4.0.0`, `Cobertura Plugin >=1.13`,  `Pipeline: GitHub Groovy Libraries >=1.0`
-  * For internal TomTom projects: Trigger **Scan Organization Folder Now** on the BitBucket Team Project folder. In case of problems contact the @nav-pipeline team.
-* Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``) and start coding.
-* If you chose to use Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
-* If you chose to use Jenkins it depends on your internal Jenkins setup.
-  * Required Jenkins plugins: `Warnings Next Generation Plugin >=4.0.0`, `Cobertura Plugin >=1.13`,  `Pipeline: GitHub Groovy Libraries >=1.0`
-  * For internal TomTom projects: Trigger **Scan Organization Folder Now** on the BitBucket Team Project folder. In case of problems contact the @nav-pipeline team.
-* Install the dev requirements into a virtualenv. (`pip install -r requirements_dev.txt`) and start coding.
-
 
 #### Variables explained
 
