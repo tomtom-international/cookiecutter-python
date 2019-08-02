@@ -14,7 +14,10 @@
     "version": "0.0.1-dev",
 
     "use_black_formatter": "n",
-    "use_spellcheck": "y",
+    "use_spellcheck": "n",
+
+    "use_tox": "n",
+    "use_makefile": "n",
 
     "ci": "{% if cookiecutter.vs|lower == 'github' %}azure{% else %}jenkins{% endif %}",
     "ci_url": "{% if cookiecutter.ci|lower == 'azure' %}https://dev.azure.com{% else %}https://jenkins.your_org.com{% endif %}",

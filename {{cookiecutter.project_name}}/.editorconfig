@@ -17,5 +17,7 @@ end_of_line = crlf
 [LICENSE]
 insert_final_newline = false
 
+{% if cookiecutter.use_makefile|lower == "y" -%}
 [Makefile]
 indent_style = tab
+{% endif -%}

@@ -24,4 +24,4 @@ FROM $PYTHON_BASE
 COPY --from=deploy_builder /opt/venv /opt/venv
 
 ENV PATH="/opt/venv/bin:$PATH"
-ENTRYPOINT [""]
+ENTRYPOINT ["{{ cookiecutter.project_name }}"]

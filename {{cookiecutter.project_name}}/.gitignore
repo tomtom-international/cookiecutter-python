@@ -37,7 +37,9 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
+{% if cookiecutter.use_tox|lower == "y" -%}
 .tox/
+{% endif -%}
 .coverage
 .coverage.*
 .cache

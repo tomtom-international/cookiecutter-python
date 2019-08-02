@@ -11,9 +11,6 @@
 [![PyPI - Status](https://img.shields.io/pypi/status/{{ cookiecutter.project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.project_name }}/)
 [![PyUp - Updates](https://pyup.io/repos/github/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}/shield.svg)](https://pyup.io/repos/github/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}/)
 {% endif -%}
-{% if cookiecutter.vs|lower == "bitbucket" -%}
-[Bitbucket Pages](https://{{ cookiecutter.vs_url }}/pages/{{ cookiecutter.vs_account }}/{{ cookiecutter.project_name }}/docs/browse/docs/index.html)
-{% endif %}
 
 {{ cookiecutter.project_short_description }}
 
@@ -21,6 +18,12 @@
 
 * TODO
 
+## Requirements
+
+* [python3](https://www.python.org/downloads)
+* [pip3](https://pip.pypa.io/en/stable/installing)
+* [virtualenv >= 16.6.0](https://virtualenv.pypa.io/en/latest/installation/)
+
 ## Credits
 
-This package was created with [Cookiecutter](https://github.com/audreyr/cookiecutter) and the [tomtom-international/cookiecutter-python](https://github.com/tomtom-international/cookiecutter-python) project template.
+This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [tomtom-international/cookiecutter-python](https://github.com/tomtom-international/cookiecutter-python) project template.
