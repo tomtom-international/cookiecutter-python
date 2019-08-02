@@ -94,7 +94,12 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
 Before you submit a pull request, check that it meets these guidelines:
 
 1. The pull request should include tests.
+
+    We recommend using [py.test](http://pytest.org/en/latest/) over [unittest](https://docs.python.org/3/library/unittest.html) as it has a much simpler syntax and uses already built-in features (eg. assert).
+    Please have a look as well on the [Hitchhikers's Guide to Python](https://docs.python-guide.org/writing/tests/) which gives many rules that
+    should be followed while writing tests.
 1. If the pull request adds functionality, the docs should be updated.
+
    Put your new functionality into a function with a docstring, and add the feature to the list in the [README.md](README.md).
 1. The pull request should pass the CI checks. Check {% if cookiecutter.ci|lower == "azure" -%}https://dev.azure.com/{{ cookiecutter.ci_org_name }}/{{ cookiecutter.ci_project_name }}/_build{% elif cookiecutter.ci|lower == "jenkins" -%}{{ cookiecutter.ci_url }}/{% if cookiecutter.ci_org_name|length -%}job/{{ cookiecutter.ci_org_name }}/{% endif %}job/{{ cookiecutter.ci_project_name }}/job/{{ cookiecutter.project_name }}/view/change-requests/{% endif %} and make sure that the tests pass for all supported Python versions.
 
