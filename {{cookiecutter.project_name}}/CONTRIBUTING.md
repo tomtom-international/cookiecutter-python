@@ -51,7 +51,7 @@ If you are proposing a feature:
 
 Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for local development.
 
-1. Fork the **{{ cookiecutter.project_name }}** repo on {{ cookiecutter.vs | title }}.
+1. Fork the **{{ cookiecutter.project_name }}** repository.
 
 1. Clone your fork locally.
 
@@ -59,7 +59,7 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
    this is how you set up your fork for local development:
 
         $ cd {{ cookiecutter.project_name }}/
-        $ virtualenv env
+        $ virtualenv --python=python3 env
         $ source env/bin/activate
         $ python setup.py develop
 
