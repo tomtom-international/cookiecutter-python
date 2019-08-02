@@ -14,6 +14,7 @@ if __name__ == '__main__':
 
     if "{{ cookiecutter.vs }}".lower() == "bitbucket":
         remove_dir(".github")
+        remove_dir(".dependabot")
 
     if "{{ cookiecutter.ci }}".lower() == "azure":
         remove_file("Jenkinsfile")
