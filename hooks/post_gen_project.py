@@ -37,3 +37,8 @@ if __name__ == "__main__":
 
     if "{{ cookiecutter.use_tox }}".lower() == "n":
         remove_file("tox.ini")
+
+    if "{{ cookiecutter.use_makefile }}".lower() == "n":
+        remove_file("Makefile")
+        remove_file("docs/Makefile")
+        remove_file("docs/make.bat")

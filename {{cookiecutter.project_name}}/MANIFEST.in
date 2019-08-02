@@ -9,4 +9,4 @@ recursive-include tests *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 
-recursive-include docs *.md conf.py Makefile make.bat *.jpg *.png *.gif
+recursive-include docs *.md conf.py{% if cookiecutter.use_makefile|lower == "y" %}Makefile make.bat{% endif %} *.jpg *.png *.gif
