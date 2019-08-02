@@ -1,0 +1,6 @@
+version: 1
+
+update_configs:
+  - package_manager: "python"
+    directory: "{{cookiecutter.project_name}}"
+    update_schedule: "live"
