@@ -52,12 +52,14 @@ setup: setup-checks ## install dev requirements
 	virtualenv --python=$(PYTHONVERSION) $(PYTHONENV)
 	$(ENVPIP) install -r requirements_dev.txt
 
+clean-all: clean
+	rm -fr env/
+
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
 clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
-	rm -fr env/
 	rm -fr .eggs/
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -f {} +
@@ -104,12 +106,12 @@ servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 release: dist ## package and upload a release
-	twine upload dist/*
+	twine upload build/dist/*
 
 dist: clean ## builds source and wheel package
-	$(ENVPYTHON) setup.py sdist
-	$(ENVPYTHON) setup.py bdist_wheel
-	ls -l dist
+	$(ENVPYTHON) setup.py sdist --dist-dir build/dist
+	$(ENVPYTHON) setup.py bdist_wheel --dist-dir build/dist
+	ls -l build/dist
 
 install: clean ## install the package to the active Python's site-packages
 	$(ENVPYTHON) setup.py install
