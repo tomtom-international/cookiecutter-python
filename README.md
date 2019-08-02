@@ -87,13 +87,22 @@ Cookiecutter will prompt you for various settings which we are explained here:
 
 ### Azure
 
-In case you want to host a project in the `tomtom-international` organization and you chose Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build) (@nav-pipeline: detailed instructions on how to set up a project can be found [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md)).
+In order to use Azure DevOps/Pipelines, first create an [Azure DevOps account](https://azure.microsoft.com/en-us/services/devops), create an organization and project.
+
+For detailed instructions please read the [Azure DevOps documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/overview?view=azure-devops).
+
+#### Creating Azure Pipelines
+
+A detailed description on how to create Azure Pipelines can be found as well [here](https://github.com/tomtom-international/azure-pipeline-templates/blob/master/README.md#creating-azure-pipelines).
+
+**Remark**:
+> In case you want to host a project in the `tomtom-international` organization and you chose Azure for the CI contact the @nav-pipeline team to request a build pipeline in the [TomTom Azure DevOps account](https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build).
 
 ### Jenkins
 
 In case of hosting on Jenkins/Bitbucket Server we recommend using the *BitBucket Branch Source Plugin* that allows you to configure a folder in Jenkins that will scan the whole BitBucket project for repositories with a `Jenkinsfile`.
 
-The following Jenkins plugins are required by the `pythonSetupPyPipeline`:
+The following Jenkins plugins are required by the [`pythonSetupPyPipeline`](https://github.com/tomtom-international/jsl) used in the `Jenkinsfile`:
 
 * `Warnings Next Generation Plugin >=4.0.0`
 * `Cobertura Plugin >=1.13`
