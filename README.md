@@ -78,6 +78,12 @@ Contact as well the @nav-pipeline team to activate your project on `pyup.io` for
 
 In case of hosting on Jenkins/Bitbucket Server we recommend using the *BitBucket Branch Source Plugin* that allows you to configure a folder in Jenkins that will scan the whole BitBucket project for repositories with a `Jenkinsfile`.
 
+**Remark**: The following Jenkins plugins are required by the `pythonSetupPyPipeline`:
+
+* `Warnings Next Generation Plugin >=4.0.0`
+* `Cobertura Plugin >=1.13`
+* `Pipeline: GitHub Groovy Libraries >=1.0`
+
 ## Credits
 
 This package is inspired by [Cookiecutter PyPackage](https://github.com/audreyr/cookiecutter-pypackage/) project template.
