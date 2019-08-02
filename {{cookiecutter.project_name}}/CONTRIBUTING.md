@@ -61,6 +61,7 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
         $ cd {{ cookiecutter.project_name }}/
         $ virtualenv --python=python3 env
         $ source env/bin/activate
+        $ pip install -r requirements_dev.txt
         $ python setup.py develop
 
 1. Create a branch for local development and start making your changes locally:
@@ -78,7 +79,6 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
 
         $ tox
 
-    To get tox, just pip install it into your virtualenv.
 {% endif -%}
 
 1. Commit your changes and push your branch to {{ cookiecutter.vs | title }}:
