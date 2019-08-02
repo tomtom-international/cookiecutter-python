@@ -53,7 +53,7 @@ Ready to contribute? Here's how to set up **{{cookiecutter.project_name }}** for
 
 1. Fork the **{{ cookiecutter.project_name }}** repo on {{ cookiecutter.vs | title }}.
 
-2. Clone your fork locally:
+2. Clone your fork locally.
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenv installed,
    this is how you set up your fork for local development:
