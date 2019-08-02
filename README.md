@@ -60,6 +60,8 @@ Cookiecutter will prompt you for various settings which we are explained here:
 * `version` - The current in-development version. The project makes use of [SemVer](https://semver.org) (default: 0.0.1-dev)
 * `use_black_formatter` - Use [black](https://github.com/psf/black) for formatting your code (default: n)
 * `use_spellcheck` - Use [spellchecking](https://github.com/rfk/pyenchant) and user configurable dictionary in `.pylintrc` (default: n)
+* `use_tox` - EXPERIMENTAL: Adds support for tox (default: n)
+* `use_makefile` - EXPERIMENTAL: Adds support for Makefiles (default: n)
 * `ci` - Select the CI system you want to use. By default the CI system is chosen based on the selected versioning system (`vs`). If you chose Github as VS the default CI system will be Azure Pipelines.  In case of Bitbucket you will get Jenkins.
 * `ci_url` - URL to your CI system (eg. https://dev.azure.com, https://jenkins.acme.org)
 * `ci_org_name` - For Azure Pipelines this is the organization name. In case of Jenkins you can leave this either empty or in case you have defined your Jenkins projects under a folder use the folder name.
