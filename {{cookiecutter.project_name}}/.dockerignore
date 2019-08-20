@@ -2,6 +2,7 @@
 .gitignore
 .pylintrc
 .md
+dist/
 {% if cookiecutter.ci|lower == "azure" -%}
 azure-pipelines.yml
 {% elif cookiecutter.ci|lower == "jenkins" -%}
