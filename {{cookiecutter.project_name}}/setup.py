@@ -21,11 +21,16 @@ with open("README.md") as readme_file:
 with open("CHANGELOG.md") as changelog_file:
     changelog = changelog_file.read()
 
-
 requirements = []
+extra_requirements = {}
+# Ensure that linting and testing will be done with all depedencies installed
+collected_extras = []
+for req_set_name, req_set in extra_requirements.items():
+    collected_extras += req_set
+
 # pytest-runner is needed to be able to call `python setup.py test` and use pytest to
 # execute the tests
-setup_requirements = ["pytest-runner",]
+setup_requirements = ["pytest-runner",] + collected_extras
 test_requirements = ["pytest", "pytest-cov", "coverage",]
 
 
