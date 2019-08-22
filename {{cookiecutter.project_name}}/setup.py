@@ -25,7 +25,7 @@ requirements = []
 extra_requirements = {}
 # Ensure that linting and testing will be done with all depedencies installed
 collected_extras = []
-for req_set_name, req_set in extra_requirements.items():
+for req_set in extra_requirements.values():
     collected_extras += req_set
 
 # pytest-runner is needed to be able to call `python setup.py test` and use pytest to
