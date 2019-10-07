@@ -27,6 +27,11 @@ if __name__ == "__main__":
         remove_dir(".github")
         remove_dir(".dependabot")
 
+    if "{{ cookiecutter.open_source_project }}".lower() == "n":
+        remove_file("AUTHORS.md")
+        remove_file("LICENSE")
+        remove_file("docs/authors.rst")
+
     if "{{ cookiecutter.ci }}".lower() == "azure":
         remove_file("Jenkinsfile")
 

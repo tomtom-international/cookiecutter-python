@@ -55,14 +55,15 @@ setup(
     author={{ cookiecutter.project_slug }}.__author__,
     author_email={{ cookiecutter.project_slug }}.__email__,
 
-    # Choose your license
-    license="Apache Software License 2.0",
-
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
+        {% if cookiecutter.open_source_project|lower == "y" -%}
         "License :: OSI Approved :: Apache Software License",
+        {%- else -%}
+        "License :: Other/Proprietary License",
+        {%- endif %}
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.5",

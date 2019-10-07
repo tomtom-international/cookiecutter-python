@@ -65,6 +65,7 @@ Cookiecutter will prompt you for various settings which we are explained here:
 * `vs` - Select between github (1) or bitbucket (2) (default: 1)
 * `vs_url` - Provide the domain name of the versioning system without `http(s)://` (default: github.com)
 * `vs_account` - Account/organization on Github or project name on BitBucket Server (default: tomtom-international)
+* `open_source_project` - Generate additional files for OSS project (AUTHORS.md, LICENSE, etc) (default: y for github, n for bitbucket)
 * `project_name` - The name of your Python project. This is also the name of the repository in Github/BitBucket (default: python-skeleton)
 * `project_slug` -  Python friendly module name. By default this is the normalized version of `project_name` (default: python_skeleton)
 * `project_short_description` -  A short description of your Python package. This will end up in the README.md of your project

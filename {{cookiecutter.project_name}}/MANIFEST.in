@@ -1,8 +1,10 @@
-include AUTHORS.md
-include CONTRIBUTING.md
 include CHANGELOG.md
-include LICENSE
+include CONTRIBUTING.md
 include README.md
+{% if cookiecutter.open_source_project|lower == "y" -%}
+include AUTHORS.md
+include LICENSE
+{%- endif %}
 
 recursive-include tests *
 
