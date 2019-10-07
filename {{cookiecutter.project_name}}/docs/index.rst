@@ -11,8 +11,10 @@
    usage
    Modules <modules>
    contributing
-   authors
    history
+{% if cookiecutter.open_source_project|lower == "y" -%}
+   authors
+{%- endif %}
 
 Indices and tables
 ==================
