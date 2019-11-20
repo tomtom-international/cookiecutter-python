@@ -96,6 +96,11 @@ setup(
         ],
     },
 
+    # Restrictions on the supported Python version. Use the appropriate PEP440 version specifiers.
+    # See: https://www.python.org/dev/peps/pep-0440/#version-specifiers
+    # Example: ">=2.7, !=3.0.*, <4"
+    python_requires=">=3",
+
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
