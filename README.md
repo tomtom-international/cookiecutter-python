@@ -81,7 +81,7 @@ Cookiecutter will prompt you for various settings which we are explained here:
 * `pypi_repo` - PyPI repository the package should be deployed to. In case you select Github for `vs` the default value is the official PyPI index whereas in case of BitBucket you get a hint to provide a URL to an Artifactory PyPI repository.
 * `pypi_credentials_id` - For Azure Pipelines this is the [service connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml) that allows you to push Python packages to the official PyPI index. For Jenkins this is the credentials ID used for authentication with an Artifactory PyPI repository.
 * `docker_registry_credentials_id` - For Azure Pipelines this is the service connection that allows you to push Docker images to a public Docker registry. For Jenkins this is the credentials ID used for authentication with for example an Artifactory Docker repository.
-* `ci_ssh_agent_user` -  Skip this for Azure Pipelines. For Jenkins this is the credentials ID for a user authenticated with a SSH private key. This is required to allow git commits during the versioning process.
+* `jenkins_scm_credentials_id` -  Skip this for Azure Pipelines. For Jenkins this is the credentials ID for a user that has write access to a git repository. This is required to allow git commits/pushes during the versioning process.
 * `azure_build_definition_id` - Skip this for Jenkins. For Azure Pipelines this is the ID identifiying the pipeline (eg. https://dev.azure.com/tomtomweb/GitHub-TomTom-International/_build?definitionId=26)
 
 ## Tips

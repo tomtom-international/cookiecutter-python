@@ -7,4 +7,4 @@ pythonSetupPyPipeline \
   dockerRepo: "python", \
   pypiRepo: "{{ cookiecutter.pypi_repo }}", \
   pypiCredentialsId: "{{ cookiecutter.pypi_credentials_id }} ", \
-  sshAgentUser: "{{ cookiecutter.ci_ssh_agent_user }}"
+  scmCredentialsId: "{{ cookiecutter.jenkins_scm_credentials_id }}"
