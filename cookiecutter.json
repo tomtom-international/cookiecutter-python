@@ -31,6 +31,6 @@
     "azure_build_definition_id": "{% if cookiecutter.ci|lower == 'azure' %}5{% else %}N/A{% endif %}",
     "jenkins_scm_credentials_id": "{% if cookiecutter.ci|lower == 'jenkins' %}bitbucket_user{% else %}N/A{% endif %}",
     "build_command": "python setup.py build",
-    "lintCommand": "python setup.py lint --lint-output-format parseable",
-    "testCommand": "python setup.py test --addopts '--cov-report xml:build/coverage.xml --cov-report term --cov-branch --junitxml=build/test_results.xml'"
+    "lint_command": "python setup.py lint --lint-output-format parseable",
+    "test_command": "python setup.py test --addopts '--cov-report xml:build/coverage.xml --cov-report term --cov-branch --junitxml=build/test_results.xml'"
 }
