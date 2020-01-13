@@ -7,4 +7,7 @@ pythonSetupPyPipeline \
   dockerRepo: "python", \
   pypiRepo: "{{ cookiecutter.pypi_repo }}", \
   pypiCredentialsId: "{{ cookiecutter.pypi_credentials_id }} ", \
-  scmCredentialsId: "{{ cookiecutter.jenkins_scm_credentials_id }}"
+  scmCredentialsId: "{{ cookiecutter.jenkins_scm_credentials_id }}", \
+  buildCommand: "{{ cookiecutter.build_command }}", \
+  lintCommand: "{{ cookiecutter.lint_command }}", \
+  testCommand: "{{ cookiecutter.test_command }}"

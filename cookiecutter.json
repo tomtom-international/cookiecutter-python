@@ -28,6 +28,9 @@
     "pypi_repo": "{% if cookiecutter.ci|lower == 'azure' %}https://pypi.org/legacy/{% else %}https://artifactory.your_org.com/artifactory/api/pypi/pypi-local{% endif %}",
     "pypi_credentials_id": "{% if cookiecutter.ci|lower == 'azure' %}testpypi-tomtom-dev{% else %}artifactory-pypi{% endif %}",
     "docker_registry_credentials_id": "{% if cookiecutter.ci|lower == 'azure' %}tomtom-docker-registry-bintray{% else %}artifactory-docker{% endif %}",
+    "azure_build_definition_id": "{% if cookiecutter.ci|lower == 'azure' %}5{% else %}N/A{% endif %}",
     "jenkins_scm_credentials_id": "{% if cookiecutter.ci|lower == 'jenkins' %}bitbucket_user{% else %}N/A{% endif %}",
-    "azure_build_definition_id": "{% if cookiecutter.ci|lower == 'azure' %}5{% else %}N/A{% endif %}"
+    "build_command": "python setup.py build",
+    "lint_command": "python setup.py lint --lint-output-format parseable",
+    "test_command": "python setup.py test --addopts '--cov-report xml:build/coverage.xml --cov-report term --cov-branch --junitxml=build/test_results.xml'"
 }
