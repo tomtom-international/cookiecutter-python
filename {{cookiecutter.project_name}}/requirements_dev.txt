@@ -5,7 +5,7 @@
 pip==19.2.1
 setuptools==41.0.1
 
-bumpversion==0.5.3
+bumpversion==0.6.0
 twine==1.13.0
 
 cmarkgfm==0.4.2
