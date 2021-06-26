@@ -32,5 +32,5 @@ tox==3.12.1
 pytest-black==0.3.7
 {% endif %}
 {% if cookiecutter.use_spellcheck|lower == "y" -%}
-pyenchant==2.0.0
+pyenchant==3.2.1
 {% endif %}
