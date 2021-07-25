@@ -2,7 +2,7 @@
 # Example:
 # --extra-index-url https://artifactory.acme.org/artifactory/api/pypi/pypi-local/simple
 
-pip==19.2.1
+pip==21.2
 setuptools==41.0.1
 
 bumpversion==0.5.3
