@@ -3,7 +3,7 @@
 # --extra-index-url https://artifactory.acme.org/artifactory/api/pypi/pypi-local/simple
 
 pip==19.2.1
-setuptools==41.0.1
+setuptools==61.3.1
 
 bumpversion==0.5.3
 twine==1.13.0
