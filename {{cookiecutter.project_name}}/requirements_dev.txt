@@ -25,7 +25,7 @@ pytest-runner==5.1
 setuptools-lint==0.6.0
 
 {% if cookiecutter.use_tox|lower == "y" -%}
-tox==3.12.1
+tox==4.0.5
 {% endif %}
 
 {% if cookiecutter.use_black_formatter|lower == "y" -%}
